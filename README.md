@@ -25,6 +25,6 @@ Indoor Monitoring is an ESP32-based environmental monitor for classrooms, labs, 
 
 ## Website
 
-The project website is stored in `doc/` and is deployed with GitHub Pages.
+The project website source is stored in `doc/`. The published site is pushed to the `gh-pages` branch for GitHub Pages.
 
 Site URL: https://marksui.github.io/Indoor_Monitoring/
