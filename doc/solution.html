@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload images -->
+    <link rel="preload" href="./images/sketch.png" as="image" />
+    <link rel="preload" href="./images/block.png" as="image" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="index.html" />
+    <link rel="prefetch" href="team.html" />
+    <link rel="prefetch" href="problem.html" />
+    <link rel="prefetch" href="updates.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn">
+        <h1>Our Solution</h1>
+
+        <!-- <div class="top-image-container">
+          <img
+            src="./images/sketch.png"
+            alt="Solution Overview"
+            class="full-width-image"
+          />
+          <p class="image-caption">High level sketch of our solution</p>
+        </div> -->
+
+        <div class="solution-layout">
+          <div class="solution-column">
+            <h2>What it Does</h2>
+            <p>
+              Our solution is an indoor environmental monitoring system that
+              tracks multiple metrics, including:
+            </p>
+            <ul>
+              <li>Temperature</li>
+              <li>Humidity</li>
+              <li>Gas (VOCs)</li>
+              <li>Carbon Dioxide</li>
+              <li>PM 1, 2.5, 10</li>
+              <li>Sound</li>
+            </ul>
+            <p>
+              This will give the user (likely students and educators) a full
+              picture of their indoor environment. This information will be
+              visible on a display for easy viewing and monitoring. Multiple
+              display views will be available to the user.
+            </p>
+          </div>
+
+          <div class="solution-column">
+            <h2>Technological Aspects</h2>
+            <p>
+              To realize our solution, we will be using an ESP32 based board
+              (Adafruit Feather V2) in combination with multiple sensors, such
+              as:
+            </p>
+            <ul>
+              <li>BME 680</li>
+              <li>SCD-40</li>
+              <li>PMSA003I</li>
+              <li>ICS‑43434</li>
+            </ul>
+            <p>
+              An LCD display will be used to show the collected data. We will
+              leverage I2C, I2S, and SPI to facilitate communication between the
+              sensors and the Adafruit ESP32 board. For power, we will use both
+              the 3.3 volt pin and 5 volt pin (+ an LDO) from the ESP32 board.
+              All power and communication needs can be met with minimal extra
+              hardware.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          <b><strong>Testable Hypothesis:</strong></b> <br />
+          Our indoor monitor will correctly measure and display the temperature, humidity
+          CO2, PM 1, 2.5, 10, and noise levels in a classroom environment. Specifically,
+          we will be able to detect when the CO2 levels are above 1000 ppm which is when
+          cognitive performance starts to become impaired in the classroom environment.
+        </p>
+
+        <div class="bottom-image-container">
+          <img
+            src="./images/block.png"
+            alt="System Architecture"
+            class="centered-image"
+          />
+          <p class="image-caption">
+            Block diagram including microcontroller, sensors, and display
+          </p>
+        </div>
+
+        <div class="problem-section">
+          <h1 class="section-divider">PCB Design</h1>
+
+          <div class="carousel-container" id="carouselPcbDesign">
+            <button
+              class="carousel-arrow carousel-prev"
+              id="prevPcbDesign"
+              aria-label="Previous image"
+            >
+              ❮
+            </button>
+
+            <div class="carousel-content">
+              <div class="carousel-images" id="carouselPcbDesign-images">
+                <!-- Images will be loaded via JavaScript -->
+              </div>
+              <p
+                class="image-caption carousel-caption"
+                id="captionPcbDesign"
+              ></p>
+            </div>
+
+            <button
+              class="carousel-arrow carousel-next"
+              id="nextPcbDesign"
+              aria-label="Next image"
+            >
+              ❯
+            </button>
+          </div>
+
+          <p>
+            Our PCB is integral to our project as it connects our various
+            environmental/sound sensors, display, and buttons to our Feather V2
+            (esp32) board. Once it is assembled the PCB will be housed in a 3D
+            printed enclosure, which will physically be our final solution. The
+            PCB connects everything together which allows for sensor
+            measurements to be taken and displayed, the user to use the buttons
+            to switch views, etc. which is our entire functionality.
+          </p>
+
+          <p>
+            Thankfully, our PCB design and assembly was actually quite
+            straightforward. Due to quadruple checking our design prior to
+            ordering, we were able to avoid any issues and everything worked as
+            expected after assembly. Two things that required extra
+            consideration were:
+          </p>
+          <ul>
+            <li>
+              The fact that the esp32 input only pins do NOT have pull-up
+              resistors, so we had to add them to our PCB
+            </li>
+            <li>
+              The 3.3v regulator on the Feather V2 cannot power all of our
+              sensors, so we needed to use an LDO to create an extra 3.3v rail
+            </li>
+          </ul>
+          <p>
+            These two considerations were the things that *could have* gone
+            wrong, but thankfully we were able to catch them. Otherwise, we
+            didn't have any major challenges or pivots in our PCB design or
+            assembly.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+  </body>
+</html>

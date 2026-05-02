@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload images -->
+    <link rel="preload" href="./images/evan.jpg" as="image" />
+    <link rel="preload" href="./images/mark.jpg" as="image" />
+    <link rel="preload" href="./images/kevin.jpg" as="image" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="index.html" />
+    <link rel="prefetch" href="problem.html" />
+    <link rel="prefetch" href="updates.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn">
+        <div class="team-layout">
+          <div class="team-column">
+            <!-- First column with two stacked cards -->
+            <div
+              class="team-card divider-card animate__animated animate__fadeIn"
+              style="animation-duration: 800ms"
+            >
+              <img src="./images/evan.jpg" alt="Jane Doe" />
+              <div class="team-info">
+                <h1>Evan Robert</h1>
+                <p>
+                  3rd year electrical engineering student who's interested in
+                  embedded, digital design, and enjoys playing piano.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="team-card animate__animated animate__fadeIn"
+              style="animation-duration: 800ms"
+            >
+              <img src="./images/mark.jpg" alt="Alex Johnson" />
+              <div class="team-info">
+                <h1>Mark Sui</h1>
+                <p>
+                  4th year Computer Engineering & Math-Applied science major,
+                  with hobbies in traveling and photography.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-column centered-column">
+            <div class="team-heading-container">
+              <h1 class="super-heading">Our Team</h1>
+            </div>
+            <div class="card-wrapper">
+              <div
+                class="team-card animate__animated animate__fadeIn"
+                style="animation-duration: 800ms"
+              >
+                <img src="./images/kevin.jpg" alt="John Smith" />
+                <div class="team-info">
+                  <h1>Kevin Yuan</h1>
+                  <p>
+                    3rd year Computer Engineering major who enjoys basketball
+                    and hiking.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+    
+    <script src="js/main.js"></script>
+  </body>
+</html>

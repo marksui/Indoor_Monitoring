@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="timeline.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn">
+        <h1>Update 1 - Week 7 Monday (& Prior)</h1>
+
+        <p>
+          During the first portion of the class, our efforts were mainly focused
+          on finding a problem to solve and later brainstorming ideas for a
+          solution. After finding our problem, we quickly came up with the idea
+          of an indoor environmental monitor. Shortly after, we chose parts and
+          began to design our PCB.
+        </p>
+
+        <h2>Choosing parts</h2>
+        <p>
+          Choosing multiple sensors and ensuring compability was a bit of
+          challenge in regards to the pin budget of the esp32 breakout board. We
+          ended up going with sensors + esp32 board from Adafruit for ease of
+          ordering, compability, and documentation. To organize our materials
+          and ensure compatability, we created
+          <a
+            href="https://docs.google.com/spreadsheets/d/131sWxI_M1ms29DY5qt7oAHl-zEb3N0CwOz0BO7ZT33k/edit?usp=sharing"
+            style="color: lightblue"
+            >this google sheet.</a
+          >
+        </p>
+
+        <h2>PCB Design</h2>
+        <p>
+          Choosing parts was honestly more challenging than designing the PCB.
+          Because we are only using breakout boards, PCB design was relatively
+          straightfoward. Other than routing, the main challenge was power
+          budget. Because we are using both the 2.2" TFT LCD Display and the
+          Adafruit PMSA003I, connecting everything on the onboard 3.3v regulator
+          would overload it. This necessitated the use of an external 5 -> 3.3v
+          LDO to create a second 3.3v rail. One additional note was that we had to 
+          create our own custom symbols + footprints for the breakout boards by converting
+          the Adafruit Eagle files to KiCAD and extracting the edge cuts/reading the pinout.
+        </p>
+
+        <h2>Current Status</h2>
+        <p>
+          Currently, we are still waiting for our parts to arrive. Currently, we
+          are in the process of researching various libraries that we can use to
+          interface with the sensors and display in addition to setting up a git
+          repository for our project. The content of the timeline has been
+          "compressed" from week 5-9 to week 7-9. If we get the parts this week,
+          should have the sensors tested + PCB assembled by the end of the week.
+        </p>
+
+        <div class="carousel-container" id="carouselUpdate1">
+          <button
+            class="carousel-arrow carousel-prev"
+            id="prevUpdate1"
+            aria-label="Previous image"
+          >
+            ❮
+          </button>
+          <div class="carousel-content">
+            <div id="carouselUpdate1-images" class="carousel-images">
+              <!-- Images will be loaded via JavaScript -->
+            </div>
+            <p id="captionUpdate1" class="image-caption carousel-caption"></p>
+          </div>
+          <button
+            class="carousel-arrow carousel-next"
+            id="nextUpdate1"
+            aria-label="Next image"
+          >
+            ❯
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

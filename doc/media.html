@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="index.html" />
+    <link rel="prefetch" href="team.html" />
+    <link rel="prefetch" href="problem.html" />
+    <link rel="prefetch" href="solution.html" />
+    <link rel="prefetch" href="timeline.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn">
+        <h1>Builds & Designs</h1>
+        <p>
+          Below are some photos and screenshots of our PCB, monitor, and other
+          parts throughout the development process.
+        </p>
+
+        <div class="carousel-container" id="carouselBuildsDesigns">
+          <button
+            class="carousel-arrow carousel-prev"
+            id="prevBuildsDesigns"
+            aria-label="Previous image"
+          >
+            ❮
+          </button>
+
+          <div class="carousel-content">
+            <div class="carousel-images" id="carouselBuildsDesigns-images">
+              <!-- Images will be loaded via JavaScript -->
+            </div>
+            <p
+              class="image-caption carousel-caption"
+              id="captionBuildsDesigns"
+            ></p>
+          </div>
+
+          <button
+            class="carousel-arrow carousel-next"
+            id="nextBuildsDesigns"
+            aria-label="Next image"
+          >
+            ❯
+          </button>
+        </div>
+      </section>
+
+      <section class="animate__animated animate__fadeIn">
+        <h1 class="section-divider">Schematics & Diagrams</h1>
+        <p>
+          Below are some schematics and diagrams from our development process.
+        </p>
+
+        <div class="carousel-container" id="carouselSchematicsDiagrams">
+          <button
+            class="carousel-arrow carousel-prev"
+            id="prevSchematicsDiagrams"
+            aria-label="Previous image"
+          >
+            ❮
+          </button>
+
+          <div class="carousel-content">
+            <div class="carousel-images" id="carouselSchematicsDiagrams-images">
+              <!-- Images will be loaded via JavaScript -->
+            </div>
+            <p
+              class="image-caption carousel-caption"
+              id="captionSchematicsDiagrams"
+            ></p>
+          </div>
+
+          <button
+            class="carousel-arrow carousel-next"
+            id="nextSchematicsDiagrams"
+            aria-label="Next image"
+          >
+            ❯
+          </button>
+        </div>
+      </section>
+
+      <section class="animate__animated animate__fadeIn">
+        <h1 class="section-divider">Video Demo</h1>
+
+        <div class="top-image-container">
+          <iframe
+            src="https://drive.google.com/file/d/1i1XesllbMheaadlFPmUjQsw9cIDPIaXv/preview"
+            width="640"
+            height="480"
+            allow="autoplay"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="animate__animated animate__fadeIn">
+        <h1 class="section-divider">Poster</h1>
+
+        <div class="top-image-container">
+          <img
+            src="./images/Poster.png"
+            alt="PCB Design"
+            class="full-width-image"
+          />
+          <p class="image-caption">Our Project Poster</p>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+  </body>
+</html>

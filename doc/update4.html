@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="timeline.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn">
+        <h1>Update 4 - Week 10 Monday</h1>
+
+        <p>
+          In week 9, we focused on preparing our final deliverables and polishing our interface, 
+          making sure that it will work well for students and other users.
+        </p>
+
+        <h2>Deliverables</h2>
+        <p>
+          During week 9, we prepared this website, video, and poster. The video and poster
+          can both be found on the media page. There weren't any notable challenges preparing these deliverables,
+          but they took a majority of our time this week.
+        </p>
+
+        <h2>Software Development</h2>
+        <p>
+          This week, we focused on refining the user interface and ensuring the data is displayed
+          such that students (and other users) can easily interpret the information. This involved
+          adding multiple screens and helpful tooltips that describe if the measurement is within 
+          healthy levels.
+        </p>
+
+        <h2>Challenges</h2>
+        <p>
+          There have been some challenges throughout the software development process:
+            <ul>
+                <li>
+                Initially, the display wasn't connecting properly with the TFT_eSPI library. This 
+                required changing of the pins in the User_Setup.h file.
+                </li>
+                <li>
+                The data was not refreshing as expected on the display, which required 
+                manually adding a timer so that the display refreshes every 10 seconds
+                when the sensors get new data.
+                </li>
+                <li>
+                The buttons would double click, causing issues with navigation. This is prevented
+                by adding a debounce delay and checking for press and release.
+                </li>
+            </ul>
+        </p>
+
+        <div class="carousel-container" id="carouselUpdate4">
+          <button
+            class="carousel-arrow carousel-prev"
+            id="prevUpdate4"
+            aria-label="Previous image"
+          >
+            ❮
+          </button>
+          <div class="carousel-content">
+            <div id="carouselUpdate4-images" class="carousel-images">
+              <!-- Images will be loaded via JavaScript -->
+            </div>
+            <p id="captionUpdate4" class="image-caption carousel-caption"></p>
+          </div>
+          <button
+            class="carousel-arrow carousel-next"
+            id="nextUpdate4"
+            aria-label="Next image"
+          >
+            ❯
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload images -->
+    <link rel="preload" href="./images/timeline.png" as="image" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="index.html" />
+    <link rel="prefetch" href="team.html" />
+    <link rel="prefetch" href="problem.html" />
+    <link rel="prefetch" href="solution.html" />
+    <link rel="prefetch" href="updates.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn">
+        <h1>Project Timeline</h1>
+
+        <div class="top-image-container">
+          <img
+            src="./images/timeline.png"
+            alt="Project Timeline"
+            class="full-width-image"
+          />
+          <p class="image-caption">Our project development timeline</p>
+        </div>
+
+        <div class="problem-section">
+          <h1 class="section-divider">Milestone Updates</h1>
+
+          <div class="vertical-button-container">
+            <a
+              href="update1.html"
+              class="arrow-button animate__animated"
+              data-text="Update 1 - Week 7 Monday (& Prior)"
+              >Update 1 - Week 7 Monday (& Prior)</a
+            >
+            <a
+              href="update2.html"
+              class="arrow-button animate__animated"
+              data-text="Update 2 - Week 8 Monday"
+              >Update 2 - Week 8 Monday</a
+            >
+            <a
+              href="update3.html"
+              class="arrow-button animate__animated"
+              data-text="Update 3 - Week 9 Monday"
+              >Update 3 - Week 9 Monday</a
+            >
+            <a
+              href="update4.html"
+              class="arrow-button animate__animated"
+              data-text="Update 4 - Week 10 Monday"
+              >Update 4 - Week 10 Monday</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

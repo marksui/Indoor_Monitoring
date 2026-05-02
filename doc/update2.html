@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="timeline.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn">
+        <h1>Update 2 - Week 8 Monday</h1>
+
+        <p>
+          Because we received our parts, we were able to make major progress on
+          our project during week 7. However, we have not yet received our PCB,
+          so we were unable to test all of the components together (due to power
+          budget issues).
+        </p>
+
+        <h2>Testing breakouts</h2>
+        <p>
+          The first step was testing all of the breakout boards. To achieve
+          this, we breadboarded the circuit referencing the google sheet that we
+          created in the last milestone. Using the example code by Adafruit, we
+          were able to confirm most of the breakouts were working after soldering
+          header pins to them and breadboarding the circuit, but we ran into some
+          challenges detailed below.
+        </p>
+
+        <h2>Programming</h2>
+        <p>
+          In addition to testing individual components, we also started
+          programming to enable multiple sensors to work together using I2S,
+          I2C, and SPI. Although we couldn't test every component together, we
+          were able to read data from multiple I2S sensors (BME680, SCD-40).
+          Additionally, we tested the display with test data.
+        </p>
+
+        <h2>Challenges</h2>
+        <p>
+          Setting up I2S for the MEMS microphone was a bit tricky, but by
+          following the Adafruit example code and using the oscilloscope to make
+          sure the clock signals were correct, we were able to successfully
+          measure loudness to some extent.
+        </p>
+
+        <p>
+          When trying to test the SCD-40 with other sensors on the breadboard, it was not being detected, 
+          which was concerning. However, once we got our PCB (in later week), all the sensors worked together as expected.
+          We think this may have been possibly due to power budget issues on the breadboard that our PCB was
+          designed to solve.
+        </p>
+
+        <div class="carousel-container" id="carouselUpdate2">
+          <button
+            class="carousel-arrow carousel-prev"
+            id="prevUpdate2"
+            aria-label="Previous image"
+          >
+            ❮
+          </button>
+          <div class="carousel-content">
+            <div id="carouselUpdate2-images" class="carousel-images">
+              <!-- Images will be loaded via JavaScript -->
+            </div>
+            <p id="captionUpdate2" class="image-caption carousel-caption"></p>
+          </div>
+          <button
+            class="carousel-arrow carousel-next"
+            id="nextUpdate2"
+            aria-label="Next image"
+          >
+            ❯
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
