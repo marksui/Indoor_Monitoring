@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="index.html" />
+    <link rel="prefetch" href="team.html" />
+    <link rel="prefetch" href="problem.html" />
+    <link rel="prefetch" href="solution.html" />
+    <link rel="prefetch" href="timeline.html" />
+    <link rel="prefetch" href="media.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn" , style="width: 960px">
+        <h1>Project Updates</h1>
+        <div>
+          <p>FINAL VIDEO AND POSTER ON MEDIA PAGE! This page contains our latest video and poster updates.</p>
+
+          <div
+            class="updates-buttons"
+            style="display: flex; gap: 2rem; margin-top: 2rem"
+          >
+            <a
+              href="https://docs.google.com/document/d/1nY2Ka7Y3XI_XACAQ6TojjjEhPKoFLI1SUjq2enrkr1g/edit?usp=sharing"
+              class="arrow-button animate__animated"
+              data-text="Video document"
+              >Video brainstorming doc</a
+            >
+            <a
+              href="https://docs.google.com/presentation/d/1_VPivhub23iWHLk9dy6NbghiHQpfHM4sMUpvjbe9XUU/edit?usp=sharing"
+              class="arrow-button animate__animated"
+              data-text="Poster document"
+              >Poster doc</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

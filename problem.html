@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload images -->
+    <link rel="preload" href="./images/blownose.jpeg" as="image" />
+    <link rel="preload" href="./images/omni.png" as="image" />
+    <link rel="preload" href="./images/uhoo.PNG" as="image" />
+    <link rel="preload" href="./images/ventq.webp" as="image" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="index.html" />
+    <link rel="prefetch" href="team.html" />
+    <link rel="prefetch" href="updates.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn">
+        <div class="problem-section">
+          <h1>Problem Definition & Motivation</h1>
+          <div class="image-text-container">
+            <div class="images-wrapper">
+              <img src="./images/co2sleep.png" alt="Problem Illustration" />
+            </div>
+            <div>
+              <p>
+                <b><strong>Problem Statement:</strong></b> <br />
+                Indoor environmental conditions such as uncomfortable
+                temperatures, poor air quality, and high noise levels frequently
+                impair the cognitive performance of students. These poor
+                conditions almost always go unnoticed and have negative effects
+                on cognitive performance, productivity, and health with the
+                students like us unaware of the cause.
+              </p>
+              <p>
+                <b><strong>Why this problem:</strong></b> <br />
+                Being students ourselves, we are often in classrooms that may be
+                uncomfortable or distracting. This can be particulary disruptive
+                during exams or presentations that require your full focus. We
+                wanted to address this problem by, at the bare minimum,
+                providing an easy and comprehensive solution to monitor indoor
+                conditions. Additionally, we all are interested in IoT,
+                embedded, and programming, and had similar ideas for our project
+                proposals.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="problem-section">
+          <h1 class="section-divider">Existing Solutions</h1>
+          <div class="image-text-container">
+            <div class="images-wrapper">
+              <img src="./images/omni.png" alt="Our Solution" />
+              <img
+                src="./images/uhoo.PNG"
+                alt="Alternative Solution"
+                class="second-image"
+              />
+              <img
+                src="./images/ventq.webp"
+                alt="Another Solution"
+                class="second-image"
+              />
+            </div>
+            <div>
+              <p>
+                One of the most prominent existing solutions is the
+                <strong>Awair Element/Omni</strong>, which measure:
+              </p>
+              <ul>
+                <li>Temperature</li>
+                <li>Humidity</li>
+                <li>CO2 levels</li>
+                <li>TVOC levels</li>
+                <li>PM2.5 levels</li>
+              </ul>
+              <p>
+                However, these solutions are quite expensive, with the Element
+                version costing over $200.
+              </p>
+              <p>
+                Another solution is the <strong>uHoo Smart Air Monitor</strong>,
+                which offers similar features to the Awair Element/Omni, but is
+                even more expensive than the Awair Element at $300. There are
+                many other consumer and business solutions similiar to these two
+                products, but they are typically quite expensive which may make
+                them unfeasible for public facilities (schools) or small
+                businesses.
+              </p>
+              <p>
+                In addition to these existing solutions, there have been some
+                proposed solutions that are arguably more compelling because of
+                their affordability. One such solution is VentQsys, detailed in
+                <a
+                  href="https://link.springer.com/article/10.1007/s11276-021-02799-5"
+                  style="color: lightblue"
+                  >this paper</a
+                >. Of course, this is only a theoretical solution, but it seems
+                to address some of the problems that we are also trying to
+                solve.
+              </p>
+              <p>
+                In summary, there are multiple existing and comprehensive
+                solutions, but they are all very expensive, which may be
+                responsible for the low adoption in classrooms or public spaces.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

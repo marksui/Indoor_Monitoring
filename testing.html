@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="index.html" />
+    <link rel="prefetch" href="team.html" />
+    <link rel="prefetch" href="problem.html" />
+    <link rel="prefetch" href="solution.html" />
+    <link rel="prefetch" href="timeline.html" />
+    <link rel="prefetch" href="media.html" />
+    <link rel="prefetch" href="tutorials.html" />
+    <link rel="prefetch" href="updates.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn">
+        <h1>Testing</h1>
+
+        <p>
+          In addition to tests performed in our video demo, below are graphs of various
+          tests we did on our system to assess its accuracy and
+          usefulness. Beneath those graphs are short explanations
+          of the data. Additionally, there are some photos taken during each
+          test. Further down the page, the algorithm that we use to generate the
+          overall environmental score is explained.
+        </p>
+
+        <div class="carousel-container" id="carouselTesting1">
+          <button
+            class="carousel-arrow carousel-prev"
+            id="prevTesting1"
+            aria-label="Previous image"
+          >
+            ❮
+          </button>
+          <div class="carousel-content">
+            <div id="carouselTesting1-images" class="carousel-images">
+              <!-- Images will be loaded via JavaScript -->
+            </div>
+            <p id="captionTesting1" class="image-caption carousel-caption"></p>
+          </div>
+          <button
+            class="carousel-arrow carousel-next"
+            id="nextTesting1"
+            aria-label="Next image"
+          >
+            ❯
+          </button>
+        </div>
+
+        <p>
+          The first graph contains the reference (thermostat) and the measured
+          (from our monitor) temperature and humidity. As shown, the measured
+          temperature starts slightly lower than the reference, but then
+          stabilizes and remains quite close to the reference temperature. The
+          measured humidity is slightly lower than the reference, but it is
+          still within margin of error.
+        </p>
+        <p>
+          The second graph shows the gradual return of CO2 levels to normal
+          after a brief burst of high CO2. As shown, the initial CO2 level is
+          around 650 ppm, which is considered normal indoors. After a burst of
+          high CO2, the levels rise to around 2500 ppm, but then gradually
+          return to normal levels within a few minutes. This is a synthetic
+          test, but it demonstrates the system's ability to measure CO2
+          accurately.
+        </p>
+        <p>
+          The third graph displays the reference (iPhone) and measured (from our
+          monitor) sound intensity in dB. For lower decibel levels, the
+          reference aligns closely with the measured sound intensity, but
+          our monitor tends to overestimate the sound intensity at higher levels
+          >60 dB. However, this may have been due to the exact position of the
+          computer (noise source) relative to the phone and our monitor. When
+          directly above both the phone and our monitor, we were able to measure
+          70 dB on both devices (shown in manual decibel test image).
+        </p>
+        <p>Below are some images taken during the tests.</p>
+
+        <div class="carousel-container" id="carouselTesting2">
+          <button
+            class="carousel-arrow carousel-prev"
+            id="prevTesting2"
+            aria-label="Previous image"
+          >
+            ❮
+          </button>
+          <div class="carousel-content">
+            <div id="carouselTesting2-images" class="carousel-images">
+              <!-- Images will be loaded via JavaScript -->
+            </div>
+            <p id="captionTesting2" class="image-caption carousel-caption"></p>
+          </div>
+          <button
+            class="carousel-arrow carousel-next"
+            id="nextTesting2"
+            aria-label="Next image"
+          >
+            ❯
+          </button>
+        </div>
+
+        <div
+          class="button-container"
+          style="justify-content: flex-start; margin-top: 2rem"
+        >
+          <a
+            href="https://docs.google.com/spreadsheets/d/1XrpDl-DqTCqsygy9wo31-WSA9sfmK7IZJc30jJRLJro/edit?gid=0#gid=0"
+            class="arrow-button animate__animated"
+            data-text="View Detailed Test Results"
+            >Google Sheet</a
+          >
+        </div>
+
+        <h1 class="section-divider">Score Algorithm</h1>
+
+        <p>
+          Our monitor uses a simple but effective algorithm to generate an
+          overall comfort score based on AQI (PM2.5), CO2, noise, temperature,
+          and humidity. This score is designed to provide a safety oriented
+          measure of the environment (for example, a harmful CO2 level >2000 ppm
+          would result in a score of 0).
+        </p>
+
+        <p>
+          There is a separate value that determines specifically whether the
+          conditions are good for study (displayed on a different screen). This
+          value (which is boolean/good or bad) is determined with similar
+          thresholds as below (with below approx. the lowest threshold being good),
+          except the noise level is required to be below 45 dB.
+        </p>
+
+        <p>
+          When creating the algorithm, we used multiple sources to help us
+          determine the various thresholds for each measurement (sources are in
+          references). There is not an overall AQI-like measurement that
+          includes noise (and the other measurements), so we needed to start
+          from scratch using our sources as a guideline.
+        </p>
+
+        <p>
+          The comfort score, ranging from 0 to 100, is calculated by starting at
+          100 and applying penalties based on several environmental
+          measurements:
+        </p>
+        <ul>
+          <li>
+            <b><strong>PM2.5:</strong></b>
+            <ul>
+              <li>≤15 µg/m³: No penalty.</li>
+              <li>>15 to ≤35 µg/m³: 5 points deduction.</li>
+              <li>>35 to ≤75 µg/m³: 15 points deduction.</li>
+              <li>>75 to ≤150 µg/m³: 70 points deduction.</li>
+              <li>>150 µg/m³: 100 points deduction.</li>
+            </ul>
+          </li>
+          <li>
+            <b><strong>CO2:</strong></b>
+            <ul>
+              <li>≤800 ppm: No penalty.</li>
+              <li>>800 to ≤1200 ppm: 15 points deduction.</li>
+              <li>>1200 to ≤1500 ppm: 30 points deduction.</li>
+              <li>>1500 to ≤2000 ppm: 60 points deduction.</li>
+              <li>>2000 ppm: 100 points deduction.</li>
+            </ul>
+          </li>
+          <li>
+            <b><strong>Noise:</strong></b>
+            <ul>
+              <li>≤35 dB: No penalty.</li>
+              <li>>35 to ≤45 dB: 5 points deduction.</li>
+              <li>>45 to ≤60 dB: 15 points deduction.</li>
+              <li>>60 to ≤80 dB: 30 points deduction.</li>
+              <li>>80 dB: 40 points deduction.</li>
+            </ul>
+          </li>
+          <li>
+            <b><strong>Temperature:</strong></b>
+            <ul>
+              <li>65°F to 80°F: No penalty.</li>
+              <li>60°F to <65°F or >80°F to 85°F: 10 points deduction.</li>
+              <li>55°F to <60°F or >85°F to 90°F: 20 points deduction.</li>
+              <li>50°F to <55°F or >90°F to 95°F: 40 points deduction.</li>
+              <li><50°F or >95°F: 65 points deduction.</li>
+            </ul>
+          </li>
+          <li>
+            <b><strong>Humidity:</strong></b>
+            <ul>
+              <li>25% to 75%: No penalty.</li>
+              <li>15% to <25% or >75% to 85%: 10 points deduction.</li>
+              <li><15% or >85%: 30 points deduction.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          After these deductions, if the score is below 80, it is increased by
+          20% (multiplied by 1.2). The final score is then constrained between 0
+          and 100. Higher scores, achieved by maintaining optimal levels across
+          these measurements, indicate a healthy and comfortable indoor
+          environment.
+        </p>
+
+        <div
+          class="button-container"
+          style="justify-content: flex-start; margin-top: 2rem"
+        >
+          <a
+            href="https://github.com/actuallyevan/ece196-final-project"
+            class="arrow-button animate__animated"
+            data-text="Algorithm Documentation"
+            >Github Repository</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="index.html" />
+    <link rel="prefetch" href="team.html" />
+    <link rel="prefetch" href="problem.html" />
+    <link rel="prefetch" href="solution.html" />
+    <link rel="prefetch" href="timeline.html" />
+    <link rel="prefetch" href="media.html" />
+    <link rel="prefetch" href="updates.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn">
+        <h1>Tutorials</h1>
+        <p>
+          Below are our Mini Project #3 Tutorials. An image for each tutorial is
+          shown in the carousel below. Currently, links go to the pull requests.
+        </p>
+
+        <div class="button-container" style="justify-content: flex-start">
+          <a
+            href="https://github.com/ECE-196/docs/pull/11"
+            class="arrow-button animate__animated"
+            data-text="Evan's Tutorial (OLED Display)"
+            >Evan's Tutorial (OLED Display)</a
+          >
+          <a
+            href="https://github.com/ECE-196/docs/pull/58"
+            class="arrow-button animate__animated"
+            data-text="Mark's Tutorial (DHT11)"
+            >Mark's Tutorial (DHT11)</a
+          >
+          <a
+            href="https://github.com/ECE-196/docs/pull/32"
+            class="arrow-button animate__animated"
+            data-text="Kevin's Tutorial (DHT11)"
+            >Kevin's Tutorial (DHT11)</a
+          >
+        </div>
+
+        <!-- New carousel section -->
+        <div class="carousel-container">
+          <button class="carousel-arrow carousel-prev" id="prevTutorials">
+            ‹
+          </button>
+          <div class="carousel-content">
+            <div class="carousel-images" id="carouselTutorials-images">
+              <!-- Images will be populated by JavaScript -->
+            </div>
+            <div class="carousel-caption">
+              <p class="image-caption" id="captionTutorials">Loading...</p>
+            </div>
+          </div>
+          <button class="carousel-arrow carousel-next" id="nextTutorials">
+            ›
+          </button>
+        </div>
+      </section>
+
+      <section class="animate__animated animate__fadeIn">
+        <h1 class="section-divider">References</h1>
+        <p>
+          Below are the main resources we used when developing our project.
+          These were useful, especially when designing the PCB and planning out how 
+          all of the sensors would be connected to the ESP32 Feather V2. Furthermore,
+          they helped us interpret our various environmental sensor data.
+        </p>
+
+        <ul style="list-style-position: outside; padding-left: 1.5rem">
+          <li>
+            <a href="https://learn.adafruit.com/adafruit-esp32-feather-v2" style="color: lightblue"
+              >Adafruit ESP32 Feather V2</a
+            >
+            - Guide for the Feather V2 board, crucial for pin assignments and overall planning
+          </li>
+          <li>
+            <a
+              href="https://learn.adafruit.com/adafruit-bme680-humidity-temperature-barometic-pressure-voc-gas"
+              style="color: lightblue"
+              >Adafruit BME680</a
+            >
+            - Guide for the BME680 sensor, needed for pin assignments and example code
+          </li>
+          <li>
+            <a
+              href="https://learn.adafruit.com/adafruit-scd-40-and-scd-41"
+              style="color: lightblue"
+              >Adafruit SCD-40</a
+            >
+            - Guide for the SCD-40 sensor, needed for pin assignments and example code
+          </li>
+          <li>
+            <a
+              href="https://learn.adafruit.com/pmsa003i"
+              style="color: lightblue"
+              >Adafruit PMSA003I</a
+            >
+            - Guide for the PMSA003I sensor, needed for pin assignments, example code, and power budget
+          </li>
+          <li>
+            <a
+              href="https://learn.adafruit.com/adafruit-i2s-mems-microphone-breakout"
+              style="color: lightblue"
+              >Adafruit ICS-43434</a
+            >
+            - Guide for the ICS-43434 MEMS microphone, needed for pin assignments and example code
+          </li>
+          <li>
+            <a
+              href="https://learn.adafruit.com/2-2-tft-display"
+              style="color: lightblue"
+              >Adafruit 2.2" TFT Display</a
+            >
+            - Guide for the 2.2" TFT display, needed for pin assignments and example code
+          </li>
+          <li>
+            <a
+              href="https://github.com/Bodmer/TFT_eSPI"
+              style="color: lightblue"
+              >TFT_eSPI</a
+            >
+            - Library facilitating displaying data on the TFT display
+          </li>
+          <li>
+            <a
+              href="https://randomnerdtutorials.com/esp32-pinout-reference-gpios/"
+              style="color: lightblue"
+              >RandomNerdTutorials Guide</a
+            >
+            - Helped decide pin assignments for the ESP32
+          </li>
+          <li>
+            <a
+              href="https://www.co2meter.com/blogs/news/ashrae-co2-standards-classrooms?srsltid=AfmBOor7XI9rCgpfgavgJjEHS4uZsrxMtEYLRIWzzJN5HmR2Sr-pdOdc"
+              style="color: lightblue"
+              >CO2 Levels in Classrooms</a
+            >
+            - Helped to interpret our CO2 data and establish thresholds
+          </li>
+          <li>
+            <a
+              href="https://www.iqair.com/us/support/knowledge-base/KA-5110-US"
+              style="color: lightblue"
+              >Guide for AQI</a
+            >
+            - Helped to interpret our AQI data and establish thresholds
+          </li>
+          <li>
+            <a
+              href="https://hearinghealthfoundation.org/keeplistening/decibels#:~:text=Decibels%20are%20the%20unit%20of,normal%20conversation%20between%20two%20people"
+              style="color: lightblue"
+              >Safe Noise Levels Guide</a
+            >
+            - Helped to interpret our microphone data and establish thresholds
+          </li>
+          <li>
+            <a
+              href="https://delos.com/blog/why-optimal-humidity-matters-in-offices/"
+              style="color: lightblue"
+              >Understanding Humidity in Offices</a
+            >
+            - Helped to interpret our humidity data and establish thresholds
+          </li>
+          <li>
+            <a
+              href="https://en.wikipedia.org/wiki/Room_temperature"
+              style="color: lightblue"
+              >Room Temperature</a
+            >
+            - Helped to interpret our temperature data and establish thresholds
+          </li>
+        </ul>
+        <p></p>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

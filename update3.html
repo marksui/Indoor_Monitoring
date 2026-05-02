@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>196 Team 6</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="components/header.js" as="script" />
+    <link rel="preload" href="components/footer.js" as="script" />
+    <link rel="preload" href="css/critical.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/critical.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Prefetch other pages -->
+    <link rel="prefetch" href="timeline.html" />
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <main class="container">
+      <section class="animate__animated animate__fadeIn">
+        <h1>Update 3 - Week 9 Monday</h1>
+
+        <p>
+          Week 8 was a productive week for our team. We assembled the PCB and were able to connect and 
+          read all of the sensor data simultaneously. Additionally, we designed and printed the 
+          enclosure for the indoor monitor.
+        </p>
+
+        <h2>PCB Assembly</h2>
+        <p>
+          As soon as we received our PCB, we soldered the header pins and other components onto it. After that,
+          we combined our code that we used to test the sensors individually and were able to read data from all sensors at once.
+        </p>
+
+        <h2>Enclosure 3D Printing</h2>
+        <p>
+          Now that we had the PCB and all of the sensors connected to it, we were were able to measure the dimensions
+          of the entire system and design an enclosure using OnShape.
+        </p>
+
+        <h2>Further Software Development</h2>
+        <p>
+          After successfully reading data from all of the sensors, we began focusing solely on the user experience
+          and how the data will be displayed to the user. This entails how the data will be displayed on the screen,
+          how many pages there are, and how we can make it easy for the user to interpret the data. We were able 
+          to create a simple page layout by the end of the week.
+        </p>
+
+        <h2>Challenges</h2>
+        <p>
+          Designing and 3D printing the enclosure was challenging and took longer than expected. Because of the sandwich
+          design of the enclosure, the dimensions/tolerances of the friction fit needed to be precise. The initial 
+          print was too tight, so we had to adjust the dimensions and re-print. Luckily, the second print 
+          had a good friction fit (with some tape to adjust). However, the process took a long time and was 
+          a little frustrating due to the minimal availbility of 3D printers.
+        </p>
+
+        <div class="carousel-container" id="carouselUpdate3">
+          <button
+            class="carousel-arrow carousel-prev"
+            id="prevUpdate3"
+            aria-label="Previous image"
+          >
+            ❮
+          </button>
+          <div class="carousel-content">
+            <div id="carouselUpdate3-images" class="carousel-images">
+              <!-- Images will be loaded via JavaScript -->
+            </div>
+            <p id="captionUpdate3" class="image-caption carousel-caption"></p>
+          </div>
+          <button
+            class="carousel-arrow carousel-next"
+            id="nextUpdate3"
+            aria-label="Next image"
+          >
+            ❯
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
