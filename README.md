@@ -16,15 +16,6 @@ Indoor Monitoring is an ESP32-based environmental monitor for classrooms, labs, 
 - `Code/lib/TFT_eSPI/`: bundled TFT display library/configuration used by the firmware
 - `doc/`: static project website for GitHub Pages
 
-## Build And Upload
-
-1. Open the `Code/` folder in PlatformIO.
-2. Select the `adafruit_feather_esp32_v2` environment.
-3. Build and upload to the Adafruit Feather ESP32 V2.
-4. Open the serial monitor at `115200` baud for sensor logs.
-
 ## Website
-
-The project website source is stored in `doc/`. The published site is pushed to the `gh-pages` branch for GitHub Pages.
 
 Site URL: https://marksui.github.io/Indoor_Monitoring/
